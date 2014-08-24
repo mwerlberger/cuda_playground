@@ -36,4 +36,15 @@ LIST(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_20,code=sm_20)
 LIST(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_30,code=sm_30)
 LIST(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_35,code=sm_35)
 
+## using OpenCV for image i/o (at least)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+cuda_include_directories(${OpenCV_INCLUDE_DIRS})
+
+# debug
+message(STATUS "CUDA_LIBRARIES=${CUDA_LIBRARIES}")
+message(STATUS "OpenCV_LIBS=${OpenCV_LIBS}")
+
+
+# add all the subprojects
 add_subdirectory(memory_transfer)

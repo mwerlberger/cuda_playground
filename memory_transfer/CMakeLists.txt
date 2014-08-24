@@ -7,4 +7,8 @@ set(SOURCES
 )
 
 cuda_add_executable(${PNAME} ${SOURCES})
+target_link_libraries(${PNAME}
+    ${CUDA_LIBRARIES}
+    ${OpenCV_LIBS}
+)
 
