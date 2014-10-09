@@ -1,5 +1,7 @@
 CMakeLists.*
 build
+build_qt
+
 
 # Compiled Object files
 *.slo
